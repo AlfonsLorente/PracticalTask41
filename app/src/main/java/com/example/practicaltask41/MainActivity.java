@@ -39,12 +39,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void showText(View view) {
         EditText editText = (EditText) findViewById(R.id.editText);
         if (editText != null) {
-            String showString = (editText.getText().toString() + " - " + mSpinnerLabel);;
-            Toast.makeText(this, showString, Toast.LENGTH_SHORT).show();
-            phoneRes = (TextView) findViewById(R.id.text_phonelabel);
-            if (phoneRes != null) {
-                phoneRes.setText(showString);
-            };
+            if(!editText.getText().toString().equals("")) {
+                String showString = (editText.getText().toString() + " - " + mSpinnerLabel);
+
+                Toast.makeText(this, showString, Toast.LENGTH_SHORT).show();
+                phoneRes = (TextView) findViewById(R.id.text_phonelabel);
+                if (phoneRes != null) {
+                    phoneRes.setText(showString);
+                }
+
+            }
         }
     }
 
