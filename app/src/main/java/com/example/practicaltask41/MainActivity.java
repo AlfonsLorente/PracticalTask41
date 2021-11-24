@@ -1,7 +1,9 @@
 package com.example.practicaltask41;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,5 +64,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         Log.d(TAG, getString(R.string.nothing_selected));
+    }
+
+    public void showAlert(View view) {
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+        alertBuilder.setTitle("Alert");
+        alertBuilder.setMessage("Click whatever man, it doesn't matter anyway");
+        //Buttons
+        alertBuilder.setPositiveButton("Useless text", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Ohh, now the text is depressed, awesome...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alertBuilder.setNegativeButton("Even more useless text",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "God... You are a monster...", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        alertBuilder.show();
+
     }
 }
