@@ -2,6 +2,7 @@ package com.example.practicaltask41;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -86,5 +87,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         alertBuilder.show();
 
+    }
+
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(),
+                getString(R.string.date_picker));
+    }
+
+    public void showTimePickerDialog(View view) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getSupportFragmentManager(),
+                getString(R.string.time_picker));
+    }
+
+    public void processDatePickerResult(int year, int month, int day) {
+        String day_string = Integer.toString(day);
+        String month_string = Integer.toString(month+1);
+        String year_string = Integer.toString(year);
+        String dateMessage = (day_string + "/" + month_string + "/" + year_string);
+        Toast.makeText(this, "Date: " + dateMessage, Toast.LENGTH_SHORT).show();
+    }
+
+    public void processTimePickerResult(int hourOfDay, int minute) {
+        String hour_string = Integer.toString(hourOfDay);
+        String minute_string = Integer.toString(minute);
+        String timeMessage = (hour_string + ":" + minute_string);
+        Toast.makeText(this, "Time: " + timeMessage, Toast.LENGTH_SHORT).show();
     }
 }

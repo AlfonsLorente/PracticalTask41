@@ -58,10 +58,11 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <RelativeLayout
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/MarginTopLay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lay2">
+        android:layout_below="@id/lay2"
+        android:id="@+id/lay3">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,6 +78,41 @@
             android:onClick="showAlert"/>
 
     </RelativeLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_marginTop="@dimen/MarginTopLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/lay3"
+        android:id="@+id/lay4">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_date"
+            android:textSize="@dimen/choose_date_text_size"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_date"
+                android:layout_marginTop="@dimen/button_margintop"
+                android:text="@string/date_button"
+                android:onClick="showDatePickerDialog"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_time"
+                android:layout_marginTop="@dimen/button_margintop"
+                android:layout_alignBottom="@id/button_date"
+                android:layout_toRightOf="@id/button_date"
+                android:text="@string/button_time"
+                android:onClick="showTimePickerDialog"/>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 </RelativeLayout>
