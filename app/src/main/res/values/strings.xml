@@ -5,10 +5,19 @@
     <string name="nothing_entered">Nothing entered</string>
     <string name="phone_number">Phone Number: </string>
     <string name="nothing_selected">\"onNothingSelected: \"</string>
+    <string name="tap_alert">Tap to test the alert</string>
+    <string name="alert">Alert</string>
+    <string name="choose_date">Choose the date and time:</string>
+    <string name="date_button">Date</string>
+    <string name="button_time">Time</string>
     <string-array name="labels_array">
         <item>Home</item>
         <item>Work</item>
         <item>Mobile</item>
         <item>Other</item>
     </string-array>
+
+    <string name="date_picker">datePicker</string>
+    <string name="time_picker">timePicker</string>
+
 </resources>
